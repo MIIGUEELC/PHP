@@ -25,21 +25,21 @@ if ($result->num_rows > 0) {
         echo "<li>";
         
         echo "<strong>Habitación " . htmlspecialchars($room['room_number']) . "</strong><br>";
-        echo "Tipo: " . htmlspecialchars($room['room_type']) . "<br>";
-        echo "Descripción: " . htmlspecialchars($room['description']) . "<br>";
-        echo "Precio por noche: $" . htmlspecialchars($room['price']) . "<br>";
+         echo "Tipo: " . htmlspecialchars($room['bed_type']) . "<br>";
+         echo "Descripción: " . htmlspecialchars($room['name']) . "<br>";
+         echo "Precio por noche: $" . htmlspecialchars($room['price']) . "<br>";
 
       
-        if (!empty($room['offer_price'])) {
-            echo "Descuento: " . htmlspecialchars($room['discount']) . "%<br>";
-        }
+        // if (!empty($room['offer_price'])) {
+        //     echo "Descuento: " . htmlspecialchars($room['discount']) . "%<br>";
+        // }
 
-        echo "Estado: " . htmlspecialchars($room['status']) . "<br>";
+         echo "Estado: " . htmlspecialchars($room['status']) . "<br>";
 
         
-        if (!empty($room['room_photo'])) {
-            echo '<img src="' . htmlspecialchars($room['room_photo']) . '" alt="Foto de la habitación" width="200"><br>';
-        }
+        if (!empty($room['photo'])) {
+            echo '<img src="' . htmlspecialchars($room['photo']) . '" alt="Foto de la habitación" width="200"><br>';
+         }
 
         echo "</li>";
     }
