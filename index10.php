@@ -39,7 +39,7 @@ if ($result->num_rows > 0) {
 
 $conn->close();
 
-// con esto realmente le paso los datos a las views con la variable  $rooms y lo reenderiza
+
 //echo $blade->run("rooms", ["rooms" => $rooms]);
 echo $blade->run("rooms",compact("rooms")); // pasa los parametro mas rapidamente.
 
