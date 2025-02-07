@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Lista de Habitaciones</title>
+</head>
+<body>
+ <h2>Habitaciones Disponibles</h2>
+
+ <?php if(count($rooms) > 0): ?>
+ <ol>
+ <?php $__currentLoopData = $rooms; $this->addLoop($__currentLoopData);$this->getFirstLoop();
+ foreach($__currentLoopData as $room): $loop = $this->incrementLoopIndices();  ?>
+ <li>
+ <strong>Habitación <?php echo \htmlentities($room['room_number']??'', ENT_QUOTES, 'UTF-8', false); ?></strong><br>
+ Tipo: <?php echo \htmlentities($room['bed_type']??'', ENT_QUOTES, 'UTF-8', false); ?><br>
+ Descripción: <?php echo \htmlentities($room['name']??'', ENT_QUOTES, 'UTF-8', false); ?><br>
+ Precio por noche: $<?php echo \htmlentities($room['price']??'', ENT_QUOTES, 'UTF-8', false); ?><br>
+ Estado: <?php echo \htmlentities($room['status']??'', ENT_QUOTES, 'UTF-8', false); ?><br>
+ <?php if(!empty($room['photo'])): ?>
+ <br><img src="<?php echo \htmlentities($room['photo']??'', ENT_QUOTES, 'UTF-8', false); ?>" alt="Foto de la habitación" width="200"><br>
+ <?php endif; ?>
+ </li>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ </ol>
+ <?php else: ?>
+ <p>No hay habitaciones disponibles.</p>
+ 
+
+</body>
+</html>
